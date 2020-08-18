@@ -9,4 +9,8 @@ pipeline:
       - git 'https://github.com/LadyBird0/pipeline-as-yaml-plugin.git'
   - stage: Build
     steps:
-      - sh 'mvn clean install'
+      script:
+         - sh "mvn clean compile"
+    - stage: Test
+      steps:
+       - sh "mvn test"
