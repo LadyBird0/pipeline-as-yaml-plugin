@@ -1,0 +1,12 @@
+pipeline: 
+  agent:
+    any:
+  tools:
+  Maven: default
+ stages:
+  - stage: Checkout
+    steps:
+      - git 'https://github.com/LadyBird0/pipeline-as-yaml-plugin.git'
+  - stage: Build
+    steps:
+      - sh 'mvn clean install'
